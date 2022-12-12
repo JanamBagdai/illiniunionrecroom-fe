@@ -52,6 +52,37 @@ tbody{
     border-radius: 10px;
 }
 
+
+
+.wrapper {
+	text-align: center;
+}
+.wrapper h6 {
+		color: #fff;
+		font-size: 26px;
+		text-transform: uppercase;
+		font-weight: 600;
+		font-family: "Josefin Sans", sans-serif;
+		background: linear-gradient(to right,#3d4caf 10%, #f5af71 50%, #84b1a4 60%);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		text-fill-color: transparent;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 1.5s linear infinite;
+		display: inline-block;
+	}
+
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+
 /* tbody tr td:last-child {
     border: 0px;
     border-top: 2px;
