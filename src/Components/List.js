@@ -28,8 +28,13 @@ class ListView extends React.Component {
 
 
     componentDidMount() {
+        console.log("hi")
+        console.log(localStorage.getItem('jwt'))
         let url = "http://localhost:3000/get-queue"
-        axios.get(url).then((response) => {
+        const config = {
+            headers: { Authorization: `Bearer ${localStorage.getItem('jwt')}` }
+        };
+        axios.get(url,config).then((response) => {
             console.log(response.data)
             this.setState({
                 characters: response.data

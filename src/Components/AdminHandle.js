@@ -37,7 +37,7 @@ class AdminHandle extends Component {
             const characters_view = this.props.characters.data.map((character_data, char_id) => {
                 var token_id = String(character_data.token_id);
                 var name = character_data.name;
-                var people = character_data.people;
+                var turn  = character_data.turn;
                 var game = character_data.game;
 
                 return (
@@ -62,7 +62,7 @@ class AdminHandle extends Component {
                             {name}
                         </td>
                         <td scope='col'>
-                            {people}
+                            {turn}
 
                         </td>
                         <td scope='col'>  {game}
@@ -76,7 +76,7 @@ class AdminHandle extends Component {
                 )
             });
             return (
-                <table>
+                <table id='reservations'>
                     <tr>
 
                         <th>Token ID</th>
