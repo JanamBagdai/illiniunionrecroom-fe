@@ -89,8 +89,9 @@ class AdminChoose extends React.Component {
             <React.Fragment>
                 <Container>
                     <div className='radio'>
+                    <button class="button-tog" role="button" onClick={this.toggleReg}>Toggle Registration</button>
                         <img src={imageURL}/>
-                        <h2>Game : {value} <button class="button-tog" role="button" onClick={this.toggleReg}>Toggle Registration</button></h2>
+                        <h2>Game : {value} </h2>
                         
                         <div>
                             <form>

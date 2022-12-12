@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function App() {
-     const [allowReg, setAllowReg] = useState(false);
+     const [allowReg, setAllowReg] = useState(true);
 
     useEffect(()=>{
         axios.get(`http://localhost:3000/get-switch-website-details`)
@@ -22,6 +22,7 @@ function App() {
             });
     },[]);
 
+    if(allowReg){
     return (
         <Router>
            {/* {showNav ? <Navbar/>: <></>}  */}
@@ -40,6 +41,13 @@ function App() {
             </Routes>
         </Router>
     );
+    }else{
+        return(
+            <div class="season three">
+            <p class="par text__three"> Sorry RecRoom is closed right now! Please check later </p>
+            </div>
+        );
+    }
 }
 
 export default App;
