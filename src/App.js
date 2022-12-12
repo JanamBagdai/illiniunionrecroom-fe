@@ -14,7 +14,7 @@ function App() {
      const [allowReg, setAllowReg] = useState(false);
 
     useEffect(()=>{
-        axios.get(`http://localhost:3000/switch-website`)
+        axios.get(`http://localhost:3000/get-switch-website-details`)
             .then((res)=>{
                setAllowReg(res.data)
                 console.log("hello")

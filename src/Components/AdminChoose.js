@@ -51,7 +51,10 @@ class AdminChoose extends React.Component {
     }
 
     toggleReg() {
-
+        axios.get(`http://localhost:3000/switch-website`)
+            .then((res)=>{
+               console.log("toggle successful")
+            });
     }
 
 
