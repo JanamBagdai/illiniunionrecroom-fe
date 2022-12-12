@@ -5,12 +5,15 @@ import {Card, Container, Image} from 'semantic-ui-react';
 import axios from 'axios';
 import AdminHandle from './AdminHandle';
 import {MDBBadge, MDBBtn, MDBTable, MDBTableHead, MDBTableBody} from 'mdb-react-ui-kit';
+import Billiards from '../pictures/Billiards.png';
+import Bowling from '../pictures/Bowling.png';
+import BB from '../pictures/BB.png';
 
 class AdminChoose extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: '', characters: {}};
+        this.state = {value: '', characters: {}, imageURL:BB};
 
         var public_key = '2d3152cc489d1fa0dc72a0c040e78ebb';
         var private_key = '950f1f8af699f18529e5b8025a734a262218bda2';
@@ -23,6 +26,10 @@ class AdminChoose extends React.Component {
 
     onchange = e => {
         this.setState({value: e.target.value});
+        if (e.target.value === "Billiards")
+    this.setState({imageURL:Billiards});
+else
+this.setState({imageURL:Bowling});
         this.handleClick();
     }
 
@@ -66,12 +73,15 @@ class AdminChoose extends React.Component {
 
     render() {
         const {value} = this.state;
+        let {imageURL}=this.state;
+        console.log(imageURL);
+       
         return (
 
             <React.Fragment>
                 <Container>
                     <div className='radio'>
-                        <h2>Game : {value}</h2>
+                    <img src={imageURL}/>
                         <div>
                             <form>
                                 <label><input
