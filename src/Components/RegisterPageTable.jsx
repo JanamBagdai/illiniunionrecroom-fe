@@ -5,6 +5,8 @@ function RegisterPageTable() {
     const [data, getData] = useState([]);
     const URL = "http://localhost:3000/get-count";
 
+
+
     useEffect(() => {
         fetchData();
     }, []);

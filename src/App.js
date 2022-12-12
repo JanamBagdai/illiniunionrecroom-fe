@@ -8,9 +8,19 @@ import {BrowserRouter as Router, Switch, Routes, Route} from 'react-router-dom';
 import Prices from "./Components/Prices";
 import AdminPage from "./Components/AdminPage";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
-    // const [showNav, setShowNav] = useState(true);
+     const [allowReg, setAllowReg] = useState(false);
+
+    useEffect(()=>{
+        axios.get(`http://localhost:3000/switch-website`)
+            .then((res)=>{
+               setAllowReg(res.data)
+                console.log("hello")
+                console.log(res.data)
+            });
+    },[]);
 
     return (
         <Router>
