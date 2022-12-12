@@ -1,0 +1,63 @@
+.bowlingText{
+    color: #e74c3c;
+	text-align: center;
+	font-size: 30px;
+	letter-spacing: 1px;
+	font-family: 'Bungee Shade'; 
+    text-shadow: 0 0 5px #e74c3c,
+	0 0 10px #e74c3c,
+	0 0 15px #e74c3c,
+	0 0 20px #e74c3c;
+}
+
+.billiardsText{
+    color: #3498db;
+	text-align: center;
+	font-size: 30px;
+	letter-spacing: 1px;
+	font-family: 'Bungee Shade'; 
+    text-shadow: 0 0 5px #3498db,
+	0 0 10px #3498db,
+	0 0 15px #3498db,
+	0 0 20px #3498db;
+}
+
+.registerPageTableBody{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.headerText{
+    margin-top: 8em;
+}
+
+@media only screen and (max-width: 1024px) {
+    .registerPageTableBody{
+        display: flex;
+        justify-content: center;
+        margin-top: 2em;
+    }
+}
+
+.registerPageTable{
+    font-size: 1em;
+}
+
+tbody{
+    padding: 20px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+/* tbody tr td:last-child {
+    border: 0px;
+    border-top: 2px;
+    border-bottom: 2px;
+    border-style: solid;
+    border-color: black;
+  } */
+
+  

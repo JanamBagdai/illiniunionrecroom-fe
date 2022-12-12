@@ -1,0 +1,48 @@
+.rec{
+  width: 50px;
+  height: 50px;
+  opacity: 0.6;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  border-radius: 50%;
+  animation: x 12s infinite alternate, y 4s linear infinite alternate;
+}
+
+.rec1{
+  width: 30px;
+  height: 30px;
+  opacity: 0.6;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  border-radius: 50%;
+  animation: x 13s infinite alternate, y 5s linear infinite alternate;
+  
+}
+
+
+@keyframes x {
+  100% {
+    transform: translateX( calc(100vw - 20px) );
+  }
+}
+
+@keyframes y {
+  100% {
+    transform: translateY( calc(100vh - 20px) );
+  }
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
