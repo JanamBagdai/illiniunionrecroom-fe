@@ -7,10 +7,14 @@ import ListView from './Components/List';
 import {BrowserRouter as Router, Switch, Routes, Route} from 'react-router-dom';
 import Prices from "./Components/Prices";
 import AdminPage from "./Components/AdminPage";
+import React, { useEffect, useState } from "react";
 
 function App() {
+    // const [showNav, setShowNav] = useState(true);
+
     return (
         <Router>
+           {/* {showNav ? <Navbar/>: <></>}  */}
             <Navbar/>
             {/* <div className="rec"></div> */}
             <SvgComponent className="rec1"/>
@@ -22,6 +26,7 @@ function App() {
                 {/*<Route path='/Admin' element={<AdminLogin/>} />*/}
                 {/*  <Route path='/AdminChoose' element={<AdminChoose/>} />*/}
                 <Route path='/AdminPage' element={<AdminPage/>}/>
+                    
             </Routes>
         </Router>
     );

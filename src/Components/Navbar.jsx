@@ -19,7 +19,7 @@ function Navbar() {
 				<a href="/List">Check</a>
 				<a href="/Prices">Prices</a>
 				<a href="/#">Rules</a>
-				<a href="/#">About us</a>
+				<a href="https://union.illinois.edu/recroom">About us</a>
 
 				<button
 					className="nav-btn nav-close-btn"
