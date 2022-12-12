@@ -16,12 +16,13 @@ import "../Styles/form.css";
 import axios from "axios";
 
 class AdminLogin extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             fields: {},
             errors: {}
         }
+        const {move} = this.props
 
         this.handleChange = this.handleChange.bind(this);
         this.submitAdminLoginForm = this.submitAdminLoginForm.bind(this);
@@ -56,6 +57,7 @@ class AdminLogin extends React.Component {
                     console.log(error);
                 });
 
+            this.props.func();
         }
     }
 
