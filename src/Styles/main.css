@@ -62,8 +62,19 @@ header .nav-btn {
 	font-size: 1.8rem;
 }
 
+.forminput{
+	margin-right: 4px;
+}
+
 .radio{
 	margin-top: 8em;
+	margin-bottom: 2em;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+
+.billiardsforminput{
+	margin-right: 2em;
 }
 
 table {

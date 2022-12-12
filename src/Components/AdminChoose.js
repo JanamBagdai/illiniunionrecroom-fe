@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import "../Styles/main.css";
-import {Card, Container, Image} from 'semantic-ui-react';
+import "../Styles/toggleReg.css"
+import {Card, Container, Image, Button} from 'semantic-ui-react';
 import axios from 'axios';
 import AdminHandle from './AdminHandle';
 import {MDBBadge, MDBBtn, MDBTable, MDBTableHead, MDBTableBody} from 'mdb-react-ui-kit';
@@ -49,6 +50,10 @@ class AdminChoose extends React.Component {
 
     }
 
+    toggleReg() {
+
+    }
+
 
     handleClick() {
         let url = ""
@@ -82,9 +87,11 @@ class AdminChoose extends React.Component {
                 <Container>
                     <div className='radio'>
                         <img src={imageURL}/>
+                        <h2>Game : {value} <button class="button-tog" role="button" onClick={this.toggleReg}>Toggle Registration</button></h2>
+                        
                         <div>
                             <form>
-                                <label><input
+                                <label className="billiardsforminput"><input
                                     type="radio"
                                     value="Billiards"
                                     name="radio"
