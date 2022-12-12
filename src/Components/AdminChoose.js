@@ -13,7 +13,7 @@ class AdminChoose extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {value: '', characters: {}, imageURL:BB};
+        this.state = {value: '', characters: {}, imageURL: BB};
 
         var public_key = '2d3152cc489d1fa0dc72a0c040e78ebb';
         var private_key = '950f1f8af699f18529e5b8025a734a262218bda2';
@@ -27,10 +27,10 @@ class AdminChoose extends React.Component {
     onchange = e => {
         this.setState({value: e.target.value});
         if (e.target.value === "Billiards")
-    this.setState({imageURL:Billiards});
-else
-this.setState({imageURL:Bowling});
-        this.handleClick();
+            this.setState({imageURL: Billiards}, this.handleClick);
+        else
+            this.setState({imageURL: Bowling}, this.handleClick);
+
     }
 
     componentDidMount() {
@@ -73,15 +73,15 @@ this.setState({imageURL:Bowling});
 
     render() {
         const {value} = this.state;
-        let {imageURL}=this.state;
+        let {imageURL} = this.state;
         console.log(imageURL);
-       
+
         return (
 
             <React.Fragment>
                 <Container>
                     <div className='radio'>
-                    <img src={imageURL}/>
+                        <img src={imageURL}/>
                         <div>
                             <form>
                                 <label><input

@@ -14,8 +14,11 @@ const linkStyle = {
 class AdminHandle extends Component {
 
      handleDelete(tokenID)  {
+         const config = {
+             headers: { Authorization: `Bearer ${localStorage.getItem('jwt')}` }
+         };
         const URL = "http://localhost:3000/remove-queue/"+tokenID;
-        axios.delete(URL)
+        axios.delete(URL,config)
             .then(function (response) {
                 console.log(response);
             })

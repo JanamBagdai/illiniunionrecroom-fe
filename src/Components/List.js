@@ -13,24 +13,25 @@ class ListView extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {value: '', characters: {}, imageURL:BB};
+        this.state = {value: '', characters: {}, imageURL: BB};
         // var public_key = '2d3152cc489d1fa0dc72a0c040e78ebb';
         // var private_key = '950f1f8af699f18529e5b8025a734a262218bda2';
         // var timestamp = Date.now();
         // var msg = `${timestamp}${private_key}${public_key}`;
         // var md5 = require('md5');
         // var hash = md5(msg);
-         this.baseUrl = `http://localhost:3000/get-queue`;
+        this.baseUrl = `http://localhost:3000/get-queue`;
 
     }
 
     onchange = e => {
+        console.log("event")
+        console.log(e)
         this.setState({value: e.target.value});
         if (e.target.value === "Billiards")
-        this.setState({imageURL:Billiards});
-    else
-    this.setState({imageURL:Bowling});
-        this.handleClick();
+            this.setState({imageURL: Billiards}, this.handleClick);
+        else
+            this.setState({imageURL: Bowling}, this.handleClick);
     }
 
 
@@ -38,10 +39,8 @@ class ListView extends React.Component {
         console.log("hi")
         console.log(localStorage.getItem('jwt'))
         let url = "http://localhost:3000/get-queue"
-        const config = {
-            headers: { Authorization: `Bearer ${localStorage.getItem('jwt')}` }
-        };
-        axios.get(url,config).then((response) => {
+
+        axios.get(url).then((response) => {
             console.log(response.data)
             this.setState({
                 characters: response.data
@@ -56,6 +55,8 @@ class ListView extends React.Component {
     }
 
     handleClick() {
+        console.log("hi, i am here")
+        console.log(this.state.value)
         let url = ""
         if (this.state.value === "Bowling") {
             url = `${this.baseUrl}?game=bowling`;//url for bowling
@@ -78,16 +79,16 @@ class ListView extends React.Component {
 
     render() {
         const {value} = this.state;
-        let {imageURL}=this.state;
+        let {imageURL} = this.state;
         console.log(imageURL);
-        
-   
+
+
         return (
 
             <React.Fragment>
                 <Container>
                     <div className='radio'>
-                    <img src={imageURL}/>
+                        <img src={imageURL}/>
                         <div>
                             <form>
                                 <label><input
