@@ -12,7 +12,7 @@ function Navbar() {
 
 	return (
 		<header>
-			<h3></h3>
+			<h3>Illini RecRoom</h3>
 			<img src={logo} alt="Logo"/>
 			<nav ref={navRef}>
 				<a href="/">Registration</a>

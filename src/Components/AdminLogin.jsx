@@ -102,7 +102,7 @@ class AdminLogin extends React.Component {
     render() {
         return (
             <>
-                <div className="headerText">Welcome to Illini RecRoom</div>
+                <div className="headerText"></div>
 
                 <MDBContainer fluid>
 
