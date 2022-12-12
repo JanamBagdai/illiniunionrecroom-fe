@@ -6,7 +6,7 @@ import "../Styles/neonEffect.css";
 export default function RegisterationPage() {
     return(
     <React.Fragment>
-        <div className="headerText">Welcome to Illini RecRoom</div>
+        <div className="headerText"></div>
         <RegisterPageTable />
         <RegisterationPageForm />
     </React.Fragment>
