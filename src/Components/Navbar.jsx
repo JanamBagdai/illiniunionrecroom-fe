@@ -18,7 +18,7 @@ function Navbar() {
 				<a href="/">Registration</a>
 				<a href="/List">Check</a>
 				<a href="/Prices">Prices</a>
-				<a href="/#">Rules</a>
+				<a href="/Rules">Rules</a>
 				<a href="https://union.illinois.edu/recroom">About us</a>
 
 				<button
