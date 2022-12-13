@@ -15,10 +15,17 @@ export default class AdminPage extends React.Component {
       this.setState({move: true})
     //   console.log(this.state.move)
     }
+
+    handleFalse(){
+      this.setState({move: false})
+    //   console.log(this.state.move)
+    }
+
+    
     render (){
       return (
         <div>
-          {this.state.move === false && <AdminLogin move={this.state.move} func={this.handle}/> }
+          {this.state.move === false && <AdminLogin move={this.state.move} func={this.handle} funcFalse={this.handleFalse}/> }
           {this.state.move === true && <AdminChoose/>}
         </div>
       );

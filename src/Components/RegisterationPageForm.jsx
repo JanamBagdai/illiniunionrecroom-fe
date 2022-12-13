@@ -153,23 +153,25 @@ class RegisterationPageForm extends React.Component {
                     <MDBIcon fas icon="user me-3" size='lg'/>
                     <MDBInput required label='Name' name='name_reg' value={this.state.fields.name_reg}
                               onChange={this.handleChange} id='name_reg' type='text' className='w-100'/>
-                    <div className="errorMsg">{this.state.errors.name_reg}</div>
                   </div>
+                  <div className="errorMsg">{this.state.errors.name_reg}</div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <MDBIcon fas icon="phone me-3" size='lg'/>
                     <MDBInput required label='Mobile Number' name='mobileno' id='number_reg' type='rel'
                               value={this.state.fields.mobileno} onChange={this.handleChange}/>
-                    <div className="errorMsg">{this.state.errors.mobileno}</div>
+                    
                   </div>
+                  <div className="errorMsg">{this.state.errors.mobileno}</div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
                     <MDBIcon fas icon="users me-3" size='lg'/>
                     <MDBInput required label='Number of people' name='npeople_reg' id='npeople_reg'
                               type='number' min="0" value={this.state.fields.npeople_reg}
                               onChange={this.handleChange}/>
-                    <div className="errorMsg">{this.state.errors.npeople_reg}</div>
+                    
                   </div>
+                  <div className="errorMsg">{this.state.errors.npeople_reg}</div>
 
                   <div className='d-flex flex-row align-items-center mb-4'>
                     <MDBRow>
