@@ -40,6 +40,7 @@ function App() {
                 {/*<Route path='/Admin' element={<AdminLogin/>} />*/}
                 {/*  <Route path='/AdminChoose' element={<AdminChoose/>} />*/}
                 <Route path='/AdminPage' element={<AdminPage/>}/>
+                <Route path="*" element={<RegisterationPage />} />
                     
             </Routes>
         </Router>
