@@ -16,7 +16,7 @@ function App() {
      const [allowReg, setAllowReg] = useState(true);
 
     useEffect(()=>{
-        axios.get(`https://illinirecroom.herokuapp.com/get-switch-website-details`)
+        axios.get(`http://localhost:3000/get-switch-website-details`)
             .then((res)=>{
                setAllowReg(res.data)
                 console.log("hello")

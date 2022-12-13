@@ -12,15 +12,21 @@ const linkStyle = {
 };
 
 class AdminHandle extends Component {
+    constructor() {
+        super();
+        this.state = {
+        }
+    }
 
-     handleDelete(tokenID)  {
-         const config = {
-             headers: { Authorization: `Bearer ${localStorage.getItem('jwt')}` }
-         };
-        const URL = "https://illinirecroom.herokuapp.com/remove-queue/"+tokenID;
-        axios.delete(URL,config)
+    handleDelete(tokenID) {
+        const config = {
+            headers: {Authorization:`Bearer ${localStorage.getItem('jwt')}`}
+        };
+        const URL = "http://localhost:3000/remove-queue/" + tokenID;
+        axios.delete(URL, config)
             .then(function (response) {
                 console.log(response);
+                this.setState({})
             })
             .catch(function (error) {
                 console.log(error);
@@ -40,22 +46,11 @@ class AdminHandle extends Component {
             const characters_view = this.props.characters.data.map((character_data, char_id) => {
                 var token_id = String(character_data.token_id);
                 var name = character_data.name;
-                var turn  = character_data.turn;
+                var turn = character_data.turn;
                 var game = character_data.game;
 
                 return (
-
-
                     <tr>
-
-
-                        {/* <img
-                src='https://mdbootstrap.com/img/new/avatars/8.jpg'
-                alt=''
-                style={{ width: '45px', height: '45px' }}
-                className='rounded-circle'
-              /> */}
-
                         <td scope='col'>
                             {token_id}
                         </td>

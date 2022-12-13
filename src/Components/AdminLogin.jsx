@@ -38,7 +38,7 @@ class AdminLogin extends React.Component {
     }
 
     submitAdminLoginForm(e) {
-        const URL = "https://illinirecroom.herokuapp.com/login";
+        const URL = "http://localhost:3000/login";
         e.preventDefault();
         if (this.validateForm()) {
             let fields = {};
@@ -51,8 +51,15 @@ class AdminLogin extends React.Component {
                 "password": this.state.fields["password"]
             })
                 .then(function (response) {
+                    console.log("received login response")
                     console.log(response);
-                    localStorage.setItem('jwt', response.data.token)
+                    if(response.data==="error")
+                    {
+                        localStorage.setItem('jwt', response.data.token)
+                    }
+                    else {
+                        alert("username and/or password is invalid.")
+                    }
                 })
                 .catch(function (error) {
                     console.log(error);

@@ -22,7 +22,7 @@ class AdminChoose extends React.Component {
         var msg = `${timestamp}${private_key}${public_key}`;
         var md5 = require('md5');
         var hash = md5(msg);
-        this.baseUrl = `https://illinirecroom.herokuapp.com/get-queue`;
+        this.baseUrl = `http://localhost:3000/get-queue`;
     }
 
     onchange = e => {
@@ -35,9 +35,9 @@ class AdminChoose extends React.Component {
     }
 
     componentDidMount() {
-        let url = "https://illinirecroom.herokuapp.com/get-queue"
+        let url = "http://localhost:3000/get-queue"
         axios.get(url).then((response) => {
-            console.log(response.data)
+            console.log(response)
             this.setState({
                 characters: response.data
             });
@@ -51,7 +51,7 @@ class AdminChoose extends React.Component {
     }
 
     toggleReg() {
-        axios.get(`https://illinirecroom.herokuapp.com/switch-website`)
+        axios.get(`http://localhost:3000/switch-website`)
             .then((res)=>{
                console.log("toggle successful")
             });

@@ -48,7 +48,7 @@ class RegisterationPageForm extends React.Component {
   }
 
   submituserRegistrationForm(e) {
-    const URL = "https://illinirecroom.herokuapp.com/post-in-queue";
+    const URL = "http://localhost:3000/post-in-queue";
     e.preventDefault();
     if (this.validateForm()) {
       let fields = {};

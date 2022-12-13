@@ -3,7 +3,7 @@ import "../Styles/neonEffect.css";
 
 function RegisterPageTable() {
     const [data, getData] = useState([]);
-    const URL = "https://illinirecroom.herokuapp.com/get-count";
+    const URL = "http://localhost:3000/get-count";
 
 
 
