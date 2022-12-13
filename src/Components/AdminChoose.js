@@ -51,6 +51,7 @@ class AdminChoose extends React.Component {
     }
 
     toggleReg() {
+        alert("Registration button toggled");
         axios.get(`http://localhost:3000/switch-website`)
             .then((res)=>{
                console.log("toggle successful")
@@ -89,13 +90,13 @@ class AdminChoose extends React.Component {
             <React.Fragment>
                 <Container>
                     <div className='radio'>
-                    <button class="button-tog" role="button" onClick={this.toggleReg}>Toggle Registration</button>
                         <img src={imageURL}/>
-                        <h2>Game : {value} </h2>
-                        
-                        <div>
-                            <form>
-                                <label className="billiardsforminput"><input
+                        <button class='button' role="button" onClick={this.toggleReg}>Toggle Registration</button>
+                       
+                      
+                            <form class='grid-row'>
+                         
+                                <label class='flex-item'><input
                                     type="radio"
                                     value="Billiards"
                                     name="radio"
@@ -106,7 +107,7 @@ class AdminChoose extends React.Component {
                                 />
                                     Billiards
                                 </label>
-                                <label>
+                                <label class='flex-item'>
                                     <input
                                         type="radio"
                                         value="Bowling"
@@ -125,7 +126,6 @@ class AdminChoose extends React.Component {
 
                         </div>
 
-                    </div>
                     <div>
                         <AdminHandle characters={this.state.characters}/>
                     </div>
