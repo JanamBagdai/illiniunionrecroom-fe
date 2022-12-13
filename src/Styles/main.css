@@ -126,7 +126,7 @@ header .nav-btn {
 	margin-top: 8em;
 	margin-left: 8em;
 	margin-right: 8em;
-color: #E84A27;
+		color: #E84A27;
 	margin-bottom: 2em;
 	font-weight: 500;
 	letter-spacing: 1px;
@@ -163,45 +163,6 @@ nav {
 	right: 0;
 	position: fixed;
 }
-
-@media only screen and (max-width: 1324px) {
-	header .nav-btn {
-		visibility: visible;
-		opacity: 1;
-	}
-
-	header nav {
-		position: fixed;
-		top: 0;
-		right: 0;
-		height: 100%;
-		width: 50%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1.5rem;
-		background-color: var(--mainColor);
-		transition: 1s;
-		transform: translateX(100vh);
-		z-index: 9999;
-	}
-
-	header .responsive_nav {
-		transform: none;
-	}
-
-	nav .nav-close-btn {
-		position: absolute;
-		top: 2rem;
-		right: 2rem;
-	}
-
-	nav a {
-		font-size: 1.5rem;
-	}
-} 
-
 .grid-container {
 	display: grid;
 	grid-template-columns: auto auto auto;
@@ -254,4 +215,118 @@ nav {
 	background-color: #E84A27;
 	color: white;
 }
+.resload
+{
+	padding-top: 20px;
+}
+.desc
+{
+	color: black;
+}
+@media only screen and (max-width: 1324px) {
+	header .nav-btn {
+		visibility: visible;
+		opacity: 1;
+	}
+	.radio{
+		margin:80px auto auto auto ;
+		color: #E84A27;
+		font-weight: 500;
+		letter-spacing: 1px;
+		align-items: center;
+	}
+	
+	header nav {
+		position: fixed;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: var(--mainColor);
+		transition: 1s;
+		transform: translateX(100vh);
+		z-index: 9999;
+	}
+	.radio button
+	{
+	  display: block;
+	  border-radius: 5px;
+	  margin: 15px 32px;
+	  padding: 10px 10px;
+  
+	  border: none;
+	  font-size: 10px;
+	  color: white;
+	  margin-left: auto;
+	  margin-right: auto;
+	  background-color: #E84A27;
+	  text-decoration: none;
+  
+	}
+	
+   .radio img{
+	  height: 100px;
+	  width: 250px;
+	  border-radius: 4px;
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+	.radio form{
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+	header .responsive_nav {
+		transform: none;
+	}
+
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
+	
+	.grid-container {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		background-color: #f8f4f3;
+		text-align: center;
+
+	  }
+	  .grid-item h1{
+		background-color: #1E3877;
+		font-weight: bold;
+		padding: 5px;
+		font-size: 10px;
+		text-align: center;
+		color: white;
+		
+	  }
+	  .grid-item {
+		background-color: #E84A27;
+		border: 1px solid rgba(254, 254, 254, 0.8);
+		padding: 10px;
+		font-size: 10px;
+		display: inline-block;
+		
+	  }
+	  .grid-item p{
+		font-size: 10px;
+		color:white;
+		font-weight: bold;
+	  }
+	
+} 
+
+
 

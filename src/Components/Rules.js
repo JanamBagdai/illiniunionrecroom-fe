@@ -14,24 +14,24 @@ function Rules(){
   <Card>
     <Card.Content>
       <Card.Header><b>RULE 1</b></Card.Header>
-      
-      <Card.Description>
+      <div className='desc'><Card.Description>
       Only 5 people allowed per lane
-      </Card.Description>
+      </Card.Description></div>
+     
     </Card.Content>
     <Card.Content>
       <Card.Header><b>RULE 2</b></Card.Header>
-      
-      <Card.Description>
+      <div className='desc'> <Card.Description>
       Please take care of your belongings
-            </Card.Description>
+            </Card.Description></div>
+     
     </Card.Content>
     <Card.Content>
       <Card.Header><b>RULE 3</b></Card.Header>
-     
-      <Card.Description>
+      <div className='desc'> <Card.Description>
       Get you own shoes
-      </Card.Description>
+      </Card.Description></div>
+     
     </Card.Content>
   </Card>
 
