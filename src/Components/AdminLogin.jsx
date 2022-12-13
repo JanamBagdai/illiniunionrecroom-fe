@@ -22,7 +22,7 @@ class AdminLogin extends React.Component {
             fields: {},
             errors: {}
         }
-        const {move} = this.props
+
 
         this.handleChange = this.handleChange.bind(this);
         this.submitAdminLoginForm = this.submitAdminLoginForm.bind(this);
@@ -45,7 +45,7 @@ class AdminLogin extends React.Component {
             fields["emailid"] = "";
             fields["password"] = "";
             this.setState({fields: fields});
-
+            let temp = this
             axios.post(URL, {
                 "username": this.state.fields["emailid"],
                 "password": this.state.fields["password"]
@@ -53,21 +53,21 @@ class AdminLogin extends React.Component {
                 .then(function (response) {
                     console.log("received login response")
                     console.log(response);
-                    if(response.data.data==="error")
-                    {
+                    if (response.data.data === "error") {
+                        console.log("printing props"
+                        )
+                        console.log(this)
+                        temp.props.func(false);
                         alert("username and/or password is invalid.")
-                        this.props.funcFalse();
-                    }
-                    else {
+                    } else {
                         localStorage.setItem('jwt', response.data.data.token)
-                        this.props.func();
+                        console.log("calling this stupid function")
+                        temp.props.func(true);
                     }
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
-
-            
         }
     }
 

@@ -11,20 +11,19 @@ import Rules from "./Components/Rules";
 import AdminPage from "./Components/AdminPage";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Banner from "./Components/Banner";
 
 function App() {
-     const [allowReg, setAllowReg] = useState(true);
+     const [allowReg, setAllowReg] = useState("true");
 
     useEffect(()=>{
         axios.get(`http://localhost:3000/get-switch-website-details`)
             .then((res)=>{
-               setAllowReg(res.data)
-                console.log("hello")
-                console.log(res.data)
+               setAllowReg(res.data.data)
             });
     },[]);
-
-    if(allowReg){
+    console.log(allowReg)
+    if(allowReg==="true"){
     return (
         <Router>
            {/* {showNav ? <Navbar/>: <></>}  */}
@@ -41,15 +40,20 @@ function App() {
                 {/*  <Route path='/AdminChoose' element={<AdminChoose/>} />*/}
                 <Route path='/AdminPage' element={<AdminPage/>}/>
                 <Route path="*" element={<RegisterationPage />} />
-                    
+
             </Routes>
         </Router>
     );
-    }else{
+    }
+    else{
         return(
-            <div class="season three">
-            <p class="par text__three"> Sorry RecRoom is closed right now! Please check later </p>
-            </div>
+            <Router>
+                <Routes>
+                    {/*<Route path='/' element={<RegisterationPage/>}/>*/}
+                    <Route path='/AdminPage' element={<AdminPage/>}/>
+                    <Route path="*" element={<Banner />} />
+                </Routes>
+            </Router>
         );
     }
 }

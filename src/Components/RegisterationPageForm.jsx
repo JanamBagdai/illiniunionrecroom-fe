@@ -20,8 +20,10 @@ class RegisterationPageForm extends React.Component {
     super();
     this.state = {
       fields: {},
-      errors: {}
+      errors: {},
+      refresh:0
     }
+
 
     this.handleChange = this.handleChange.bind(this);
     this.handleChange2 = this.handleChange2.bind(this);
@@ -60,6 +62,7 @@ class RegisterationPageForm extends React.Component {
 
 
       this.setState({fields: fields});
+      var tempfinal = this
       axios.post(URL, {
         "name": this.state.fields["name_reg"],
         "mobile": this.state.fields["mobileno"],
@@ -69,7 +72,8 @@ class RegisterationPageForm extends React.Component {
       })
           .then(function (response) {
             console.log(response);
-            alert("your token id is:");
+            alert("registered successfully.");
+            tempfinal.state.refresh=Math.random()
           })
           .catch(function (error) {
             console.log(error);

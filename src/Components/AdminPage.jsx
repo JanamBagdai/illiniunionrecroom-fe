@@ -1,33 +1,21 @@
 import AdminLogin from "./AdminLogin";
 import AdminChoose from "./AdminChoose";
 import React from 'react';
+import {useState} from 'react';
 
-export default class AdminPage extends React.Component {
-    constructor(){
-      super();
-      this.state={
-        move: false
-        };
+export default function AdminPage() {
 
-        this.handle = this.handle.bind(this);
-    }
-    handle(){
-      this.setState({move: true})
-    //   console.log(this.state.move)
-    }
+    const [move, setMove]= useState(false)
 
-    handleFalse(){
-      this.setState({move: false})
-    //   console.log(this.state.move)
-    }
+    const handle = (val) => {
+        console.log(val);
+        setMove(val);
+    };
 
-    
-    render (){
-      return (
+    return (
         <div>
-          {this.state.move === false && <AdminLogin move={this.state.move} func={this.handle} funcFalse={this.handleFalse}/> }
-          {this.state.move === true && <AdminChoose/>}
+            {move === false && <AdminLogin func={handle}  /> }
+            {move === true && <AdminChoose/>}
         </div>
-      );
-    }
-  }
+    );
+}
