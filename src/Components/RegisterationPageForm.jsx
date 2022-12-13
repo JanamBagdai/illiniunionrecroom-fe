@@ -21,7 +21,8 @@ class RegisterationPageForm extends React.Component {
     this.state = {
       fields: {},
       errors: {},
-      refresh:0
+      refresh:0,
+      tokenId: ''
     }
 
 
@@ -72,7 +73,8 @@ class RegisterationPageForm extends React.Component {
       })
           .then(function (response) {
             console.log(response);
-            alert("registered successfully.");
+            this.setState({tokenId: response.data.tokenId})
+            alert("Registered Successfully. Your Token ID is"+{tokenId});
             tempfinal.state.refresh=Math.random()
           })
           .catch(function (error) {
