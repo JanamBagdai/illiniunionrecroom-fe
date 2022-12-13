@@ -56,16 +56,18 @@ class AdminLogin extends React.Component {
                     if(response.data==="error")
                     {
                         localStorage.setItem('jwt', response.data.token)
+                        this.props.func();
                     }
                     else {
                         alert("username and/or password is invalid.")
+                        this.props.funcFalse();
                     }
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
 
-            this.props.func();
+            
         }
     }
 
