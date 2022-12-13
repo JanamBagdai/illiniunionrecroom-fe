@@ -4,6 +4,8 @@ import "../Styles/main.css";
 import {Card, Container, Image} from 'semantic-ui-react';
 import axios from 'axios';
 import ListReservations from './ListReservations';
+import Footer from './Footer';
+
 import {MDBBadge, MDBBtn, MDBTable, MDBTableHead, MDBTableBody} from 'mdb-react-ui-kit';
 import Billiards from '../pictures/Billiards.png';
 import Bowling from '../pictures/Bowling.png';
@@ -89,9 +91,10 @@ class ListView extends React.Component {
                 <Container>
                     <div className='radio'>
                         <img src={imageURL}/>
-                        <div>
-                            <form>
-                                <label><input
+                        
+                        <div class='grid-row'>
+                            <form >
+                                <label class='flex-item'><input
                                     type="radio"
                                     value="Billiards"
                                     name="radio"
@@ -102,7 +105,7 @@ class ListView extends React.Component {
                                 />
                                     Billiards
                                 </label>
-                                <label>
+                                <label class='flex-item'>
                                     <input
                                         type="radio"
                                         value="Bowling"
@@ -124,6 +127,7 @@ class ListView extends React.Component {
                     <div>
                         <ListReservations characters={this.state.characters}/>
                     </div>
+                    <Footer/>
                 </Container>
             </React.Fragment>
         );

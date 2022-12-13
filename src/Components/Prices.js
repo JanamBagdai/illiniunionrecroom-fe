@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Footer from './Footer';
+
 function Prices(){ 
 
       return (
@@ -36,7 +38,7 @@ function Prices(){
 </div>
           </div>
         
-          
+          <Footer/>
       </React.Fragment>
       );
   }

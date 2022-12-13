@@ -45,10 +45,41 @@ nav a {
 nav a:hover {
 	color: var(--secondaryColor);
 }
+
+  grid-row{
+	display:flex;
+  }
+  .flex-item {
+	display:inline;
+	width:200px;
+	justify-content: center;
+	padding: 10px;
+	align-items:center;
+	font-size: 1em;
+	font-weight:normal;
+	color:rgb(10, 10, 10);
+  	flex-wrap: wrap;
+  
+  }
+
+  .footer{
+	margin-top: 1rem;
+	padding: 1rem;
+	background-color: #1E3877;
+	color: white;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+  }
  .radio img{
-	height: 60px;
-	width: 100px;
+	height: 100px;
+	width: 200px;
 	border-radius: 4px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
   }
 header .nav-btn {
 	padding: 5px;
@@ -68,9 +99,13 @@ header .nav-btn {
 
 .radio{
 	margin-top: 8em;
+	margin-left: 8em;
+	margin-right: 8em;
+color: #E84A27;
 	margin-bottom: 2em;
 	font-weight: 500;
 	letter-spacing: 1px;
+	align-items: center;
 }
 
 .billiardsforminput{
