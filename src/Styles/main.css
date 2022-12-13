@@ -21,7 +21,9 @@ h3{
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-
+body{
+	text-align: center;
+}
 header {
 	display: flex;
 	align-items: center;
@@ -47,7 +49,7 @@ nav a:hover {
 }
 
   grid-row{
-	display:flex;
+	display: inline-block;
   }
   .flex-item {
 	display:inline;
@@ -73,10 +75,33 @@ nav a:hover {
 	width: 100%;
 	text-align: center;
   }
+  
+  .radio button
+  {
+	display: block;
+	border-radius: 5px;
+	margin: 15px 32px;
+	padding: 10px 10px;
+
+	border: none;
+	font-size: 10px;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #E84A27;
+	text-decoration: none;
+
+  }
+  
  .radio img{
 	height: 100px;
-	width: 200px;
+	width: 250px;
 	border-radius: 4px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+  }
+  .radio form{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
