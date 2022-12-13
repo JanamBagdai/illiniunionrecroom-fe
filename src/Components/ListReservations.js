@@ -24,11 +24,12 @@ class ListReservations extends Component {
                 var name = character_data.name;
                 var turn = character_data.turn;
                 var game = character_data.game;
+                var num_p = character_data.mobile
 
                 return (
                     <tr>
                         <td scope='col'>
-                            {token_id}
+                            {num_p}
                         </td>
                         <td scope='col'>
                             {name}
@@ -47,7 +48,7 @@ class ListReservations extends Component {
                 <table id='reservations'>
                     <tr>
 
-                        <th>Token ID</th>
+                        <th>Mobile Number</th>
                         <th>Name</th>
                         <th>Turn in Queue</th>
                         <th>Game</th>

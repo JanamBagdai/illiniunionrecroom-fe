@@ -14,6 +14,23 @@ import {
 }
   from 'mdb-react-ui-kit';
 import "../Styles/form.css";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 
 class RegisterationPageForm extends React.Component {
   constructor() {
@@ -22,15 +39,25 @@ class RegisterationPageForm extends React.Component {
       fields: {},
       errors: {},
       refresh:0,
-      tokenId: ''
+      tokenId: '',
+      open: false
     }
 
 
     this.handleChange = this.handleChange.bind(this);
     this.handleChange2 = this.handleChange2.bind(this);
+    this.handleOpen = this.handleOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
     this.submituserRegistrationForm = this.submituserRegistrationForm.bind(this);
 
   };
+
+  handleOpen(){
+      this.setState({open:true})
+  }
+  handleClose(){
+    this.setState({open:false})
+}
 
   handleChange(e) {
     let fields = this.state.fields;
@@ -64,6 +91,7 @@ class RegisterationPageForm extends React.Component {
 
       this.setState({fields: fields});
       var tempfinal = this
+
       axios.post(URL, {
         "name": this.state.fields["name_reg"],
         "mobile": this.state.fields["mobileno"],
@@ -74,14 +102,15 @@ class RegisterationPageForm extends React.Component {
           .then(function (response) {
             console.log(response);
             this.setState({tokenId: response.data.tokenId})
-            alert("Registered Successfully. Your Token ID is"+{tokenId});
+            // alert("Registered Successfully. Your Token ID is"+{tokenId});
+            
             tempfinal.state.refresh=Math.random()
           })
           .catch(function (error) {
             console.log(error);
           });
 
-
+          this.handleOpen()
     }
   }
 
@@ -207,6 +236,23 @@ class RegisterationPageForm extends React.Component {
               </MDBRow>
             </MDBCardBody>
           </MDBCard>
+
+          <Modal
+        open={this.state.open}
+        onClose={this.handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Registered Successfully
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            {/* Your token Id is {this.state.tokenId} */}
+            You will be contacted on the number you provided. You can check your status in the Check queue
+          </Typography>
+        </Box>
+      </Modal>
 
         </MDBContainer>
     );
