@@ -38,7 +38,7 @@ class AdminLogin extends React.Component {
     }
 
     submitAdminLoginForm(e) {
-        const URL = "http://localhost:3000/login";
+        const URL = "https://illinirecroom.herokuapp.com/login";
         e.preventDefault();
         if (this.validateForm()) {
             let fields = {};
