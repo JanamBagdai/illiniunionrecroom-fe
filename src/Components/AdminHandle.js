@@ -22,7 +22,7 @@ class AdminHandle extends Component {
         const config = {
             headers: {Authorization:`Bearer ${localStorage.getItem('jwt')}`}
         };
-        const URL = "http://localhost:3000/remove-queue/" + tokenID;
+        const URL = "https://illinirecroom.herokuapp.com/remove-queue/" + tokenID;
         axios.delete(URL, config)
             .then(function (response) {
                 console.log(response);
